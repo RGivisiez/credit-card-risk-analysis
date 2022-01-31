@@ -36,13 +36,13 @@ Existem algumas técnicas utilizadas para compensar esse desbalanço de classe, 
 
 # Abordagem para criar novas features e procurar padrões
 
-Como esse é um dataset difícil, com as features tendo pouca ou nenhuma correlação com a variável alvo `target_default`, temos que buscar por features novas. A ideia principal é tentar encontrar features com probabilidades assimétricas, como a feature `facebook_profile` na imagem abaixo. Note que clientes no grupo da classe $0$, possuem uma chance maior de não incorrer em default, enquanto o grupo de clientes com a classe $2$ tem uma chance maior de incorrer em default.
+Como esse é um dataset difícil, com as features tendo pouca ou nenhuma correlação com a variável alvo `target_default`, temos que buscar por features novas. A ideia principal é tentar encontrar features com probabilidades assimétricas, como a feature `facebook_profile` na imagem abaixo. Note que clientes no grupo da classe 0, possuem uma chance maior de não incorrer em default, enquanto o grupo de clientes com a classe 2 tem uma chance maior de incorrer em default.
 
 ![imbalance](img/facebook_profile.png)
 
 Como será visto, durante as avaliações dos modelos, principalmente o de Decision Tree, é bem claro que features com essas assimetrias são importantes e facilitam a identificação de clientes que ocorrem em default. Porém, não temos muitas dessas features disponíveis, temos que tratar alguns dados para encontrá-las. As que eu encontrei foram `facebook_profile`, `ddd`, `score_1`, `external_data_provider_email_seen_before` e `application_time_applied`.
 
-1. `facebook_profile`: Pessoas que não colocam o link do seu Facebook ao preencher a inscrição tem mais chances de ocorrem em default (é a classe $2.0$).
+1. `facebook_profile`: Pessoas que não colocam o link do seu Facebook ao preencher a inscrição tem mais chances de ocorrem em default (é a classe 2.0).
 
 ![imbalance](img/facebook_profile.png)
 
